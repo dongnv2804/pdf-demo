@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDF</title>
+  </head>
+
+  <body>
+    <!-- style -->
+    <style>
+      body {
+        background-color: grey;
+        margin: 0;
+        font-size: 12px;
+      }
+      .container-pdf {
+        width: 459px;
+        background-color: #fff;
+      }
+      .wrap-pdf {
+        margin: 25px 20px;
+      }
+      .row {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+      }
+      .title {
+        border: 2px solid gray;
+        text-align: center;
+        background: #d1d1cf;
+      }
+      .title h1 {
+        margin: 0;
+      }
+      .info-left {
+        position: relative;
+        width: 60%;
+      }
+      .info-left div {
+        border-bottom: 1px solid black;
+      }
+      .info-right {
+        padding-left: 1rem;
+        width: 40%;
+      }
+      .time {
+        width: 80%;
+      }
+      .id-invoice span {
+        width: 50%;
+        text-align: right;
+      }
+      .qr {
+        border: 1px solid gray;
+        height: 40px;
+        display: flex;
+      }
+      .qr div {
+        width: 50%;
+        border-right: 1px solid gray;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .qr div:last-child {
+        border: none;
+      }
+      .total-head {
+        position: absolute;
+        bottom: 0;
+      }
+      .total-item {
+        padding: 2px;
+        text-align: right;
+      }
+      .wrap-item table {
+        width: 100%;
+        border-top: 1px solid grey;
+        border-bottom: 1px solid grey;
+        border-collapse: collapse;
+        text-align: center;
+      }
+      .wrap-item table th,
+      td {
+        border-right: 1px solid grey;
+        border-bottom: 1px solid grey;
+      }
+      .wrap-item table td {
+        line-break: anywhere;
+      }
+      .wrap-item table th:last-child,
+      td:last-child {
+        border-right: 0;
+      }
+      .label,
+      .wrap-item table th {
+        background-color: #d1d1cf;
+      }
+      .wrap-item table tr:nth-child(even) {
+        background-color: #fff;
+      }
+      .wrap-item table tr:nth-child(odd) {
+        background-color: #e6e3e3;
+      }
+      .tr-emplty {
+        height: 1.2em;
+      }
+      .note {
+        padding: 0.5rem 0rem;
+        font-size: 10px;
+      }
+      .caculator-price {
+        font-size: 12px;
+        border: 1px solid grey;
+      }
+      .price-left {
+        width: 60%;
+        padding: 5px;
+        border-right: 1px solid grey;
+      }
+      .price-right {
+        width: 40%;
+      }
+      .col-6 {
+        width: 50%;
+      }
+      .price-right .row {
+        height: 33.33%;
+      }
+      .price-right .row div {
+        border: 1px solid grey;
+      }
+      .text-left {
+        width: 40%;
+        text-align: left;
+      }
+      .text-right {
+        text-align: right;
+      }
+      .comment {
+        margin-top: 8px;
+        font-size: 12px;
+      }
+      .comment h5 {
+        margin: 0;
+      }
+      .input-comment {
+        border: 1px solid grey;
+        height: 4rem;
+      }
+      .text-left p {
+        white-space: pre-line;
+      }
+      .stamp {
+        float: right;
+        border: none !important;
+        background: transparent !important;
+        width: 70%;
+        height: auto;
+        object-fit: fill;
+      }
+      .content-info {
+        position: absolute;
+        left: 0;
+      }
+      .wrap-right {
+        position: relative;
+        min-height: 100px;
+      }
+      .td-amount {
+        width: 10%;
+      }
+      .td-price {
+        width: 15%;
+      }
+      .td-total {
+        width: 20%;
+      }
+      .td-name {
+        width: 45%;
+      }
+
+      .stamp-curator {
+        width: 50%;
+        height: auto;
+      }
+    </style>
+    <!-- html -->
+    <div class="container-pdf">
+      <div class="wrap-pdf">
+        <div class="header">
+          <div class="title">
+            <h1>title</h1>
+          </div>
+          <div class="row">
+            <div class="info-left">
+              <div class="name-info"><span>name</span></div>
+              <div><span>1</span><span>2</span></div>
+              <div class="time">
+                <span>11:11</span>
+              </div>
+              <div class="total-head">
+                <span>total : 100</span>
+              </div>
+            </div>
+            <div class="info-right">
+              <div class="row id-invoice">
+                <span>No.</span>
+                <span>0001</span>
+              </div>
+              <div class="wrap-right">
+                <div class="content-info">
+                  <div><span>acb</span></div>
+                  <div><span>abc</span></div>
+                  <div>TEL -111111111 -11111111</div>
+                  <div>XXXX</div>
+                  <div>XXXX</div>
+                  <div>XXXX</div>
+                </div>
+                <img
+                  class="stamp"
+                  src="https://banner2.cleanpng.com/20180309/afw/kisspng-china-seal-seal-5aa2646be7df43.5893970615205919799498.jpg"
+                  alt="image"
+                />
+              </div>
+              <div class="qr">
+                <div></div>
+                <div></div>
+                <div>
+                  <img class="stamp-curator" src="./public/condau.jpg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="main">
+          <div class="total-item"><span>total:10</span></div>
+          <div class="wrap-item">
+            <table>
+              <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>amount</th>
+                <th>price</th>
+                <th>total</th>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td class="text-left td-name">gem</td>
+                <td class="td-amount">2</td>
+                <td class="td-price">2000000000000000000000000000000000</td>
+                <td class="td-total">4000</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>
+                  <p>ok</p>
+                </td>
+                <td>2</td>
+                <td>2000</td>
+                <td>4000</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>gem</td>
+                <td>2</td>
+                <td>2000</td>
+                <td>4000</td>
+              </tr>
+              <tr class="tr-emplty">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr class="tr-emplty">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr class="tr-emplty">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr class="tr-emplty">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr class="tr-emplty">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr class="tr-emplty">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr class="tr-emplty">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr class="tr-emplty">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr class="tr-emplty">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+          <div class="note">
+            <span>「※」は軽減税率対象であることを示します。</span>
+          </div>
+          <div class="row caculator-price">
+            <div class="price-left">
+              <div>・内訳</div>
+              <div>10%対象 39,600 (消費税3,600)</div>
+              <div>8%(軽減)対象 64,800 (消費税4,800)</div>
+            </div>
+            <div class="price-right">
+              <div class="row">
+                <div class="col-6 label">小計</div>
+                <div class="col-6 text-right">12000</div>
+              </div>
+              <div class="row">
+                <div class="col-6 label">消費税</div>
+                <div class="col-6 text-right">3000</div>
+              </div>
+              <div class="row">
+                <div class="col-6 label">合計</div>
+                <div class="col-6 text-right">15000</div>
+              </div>
+            </div>
+          </div>
+          <div class="comment">
+            <h5>備考欄</h5>
+            <div class="input-comment"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
